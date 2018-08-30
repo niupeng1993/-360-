@@ -1,0 +1,9 @@
+说明：这个工具只定义能够扫描c盘下的所有文件，如果需要扫描电脑上所有的磁盘，可以在代码中加入以下一段代码，进行遍历查找到电脑中所有的磁盘
+#取得当前计算机中的盘符：
+def GetDrives():
+  dirves=[]
+  for i in range(65,91):
+	vol = chr(i) + ':/'
+	if os.path.isdir(vol):
+		drives.append(vol)
+  return tuple(drives)
